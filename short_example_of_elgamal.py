@@ -4,11 +4,9 @@ import random
 primes = [997,9973,99991] # needs a large amount of prime numbers
 #key generation
 p = primes[random.randint(0,len(primes)-1)] #gets a random prime number p
-#public key g, y and private key x
-g, x = random.randint(0,p-1), random.randint(0,p-1)
-y = (g**x) % p
-def e(g,p,y,m): #encryption
-	k = random.randint(2,p-2) #random key k
+g, x = random.randint(0,p-1), random.randint(0,p-1) #public key g and private key x
+def e(g,p,m): #encryption
+	k, y = random.randint(2,p-2), (g**x) % p #random key k and generated key y
 	r, c = (g**k) % p, (m * y**k) % p
 	return (r,c) # returning encrypted msg c1(r,c)
 def d(r,c,p,x): return (c * r**(p-x-1)) % p #decryption
