@@ -1,6 +1,5 @@
 #python utf-8 hossainel
 import random
-#prime number list
 primes = [997,9973,99991] # needs a large amount of prime numbers
 #key generation
 p = primes[random.randint(0,len(primes)-1)] #gets a random prime number p
