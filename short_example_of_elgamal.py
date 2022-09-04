@@ -12,7 +12,7 @@ def e(g,p,m): #encryption
 def d(r,c,p,x): return (c * r**(p-x-1)) % p #decryption
 result = 0
 for m in range(0,128): # test all 128 bit results
-	c1 = e(g,p,y,m)
+	c1 = e(g,p,m)
 	dk = d(c1[0],c1[1],p,x)
 	if (m==dk): result += 1 # check if passes
 print(result,g,p,x,y) #print total results
